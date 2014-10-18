@@ -1,0 +1,9 @@
+{
+  "name": "twitter-challenge",
+  "version": "0.0.1",
+  "private": "true",
+  "dependencies": {
+    "foundation": "zurb/bower-foundation",
+    "bourbon": "~4.0.2"
+  }
+}
