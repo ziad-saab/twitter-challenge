@@ -3,12 +3,15 @@
   margin: 0 auto;
   @include display(flex);
   @include flex-wrap(wrap);
+  @include align-items(stretch);
+  @include justify-content(center);
   
   &__item {
     width: 100%;
     padding: 0 10px;
     margin-bottom: 20px;
     @include display(flex); // makes equal-height columns :)
+    @include align-items(stretch);
     
     @media #{$medium-only} {
       width: 50%;
