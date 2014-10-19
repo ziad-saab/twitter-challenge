@@ -28,8 +28,18 @@ module.exports = React.createClass({
       loading: true
     }
   },
+  shouldComponentUpdate: function() {
+    return !this.props.dragging;
+  },
   componentWillMount: function() {
     var self = this;
+    
+    if (!this.props.screenName) {
+      this.setState({
+        loading: false
+      });
+      return;
+    }
     
     twitterApi(
       'statuses/user_timeline.json',
@@ -74,7 +84,7 @@ module.exports = React.createClass({
     
     return (
       <div className={classes}>
-        <h2 className="twitter-box__title">{this.props.title}</h2>
+        <h2 className="twitter-box__title">Latest @{this.props.screenName} tweets</h2>
         <div className="twitter-box__tweets">
           {tweets}
         </div>
