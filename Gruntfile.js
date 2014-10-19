@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         options: {
           logConcurrentOutput: true
         },
-        tasks: ['watch:sass', 'webpack:dev']
+        tasks: ['watch:sass', 'webpack:dev', 'foreman:dev']
       }
     },
     webpack: {
@@ -131,6 +131,11 @@ module.exports = function(grunt) {
     },
     clean: {
       dist: ['dist']
+    },
+    foreman: {
+      dev: {
+        procfile: 'Procfile.dev'
+      }
     }
   });
 
@@ -141,6 +146,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-webpack');
+  grunt.loadNpmTasks('grunt-foreman');
 
   grunt.registerTask('dev', ['concurrent:dev']);
   grunt.registerTask('build', ['clean:dist', 'copy:dist', 'webpack:dist', 'uglify:app',  'sass:dist']);
