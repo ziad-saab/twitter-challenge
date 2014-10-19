@@ -20,8 +20,10 @@
 }
 
 .twitter-box {
+  $background-color: #eee;
+  
   padding: 10px;
-  background-color: #eee;
+  background-color: $background-color;
   border: 1px solid #999;
   
   &--loading:after {
@@ -41,6 +43,13 @@
   &__tweet {
     margin: 10px 0;
     border-bottom: 1px solid #ccc;
+    background-color: $background-color;
+    @include transition(transform 250ms ease-out, box-shadow 250ms ease-out);
+  }
+  
+  &__tweet:hover {
+    @include transform(scale(1.1));
+    box-shadow: 0 0 5px 1px rgba(#000, 0.5);
   }
 }
 
