@@ -1,0 +1,62 @@
+.twitter-boxes {
+  max-width: 1000px;
+  margin: 0 auto;
+  @include display(flex);
+  @include flex-wrap(wrap);
+  
+  &__item {
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    @include display(flex); // makes equal-height columns :)
+    
+    @media #{$medium-only} {
+      width: 50%;
+    }
+    @media #{$large-up} {
+      width: 33.33%;
+    }
+  }
+}
+
+.twitter-box {
+  padding: 10px;
+  background-color: #eee;
+  border: 1px solid #999;
+  
+  &--loading:after {
+    content: "Loading...";
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+  }
+  
+  &__title {
+    margin: 0 0 20px;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  &__tweet {
+    margin: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+.tweet {
+  font-size: 12px;
+  
+  &__link {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  &__content {
+    white-space: pre-wrap;
+    margin-bottom: 5px;
+  }
+  &__date {
+    text-align: right;
+  }
+}
