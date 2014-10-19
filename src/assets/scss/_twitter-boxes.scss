@@ -1,6 +1,5 @@
 .twitter-boxes {
-  max-width: 1000px;
-  margin: 0 auto;
+  margin: 0 -10px;
   @include display(flex);
   @include flex-wrap(wrap);
   @include align-items(stretch);
@@ -35,6 +34,14 @@
     padding: 10px;
     text-align: center;
     font-size: 12px;
+  }
+  
+  .app--layout & {
+    border: 3px dashed #999;
+  }
+  
+  .twitter-boxes__item--dragging & {
+    border-color: #900;
   }
   
   &__title {

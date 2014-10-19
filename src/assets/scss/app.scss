@@ -7,3 +7,24 @@
 
 @import "main-header";
 @import "twitter-boxes";
+
+.app {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
+  
+  &__layout-toggle {
+    -webkit-appearance: none;
+    display: inline-block;
+    border: 1px solid #999;
+    background-color: #eee;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  &--layout &__layout-toggle {
+    background-color: #e00;
+    border-color: #900;
+    color: #fff;
+  }
+}
